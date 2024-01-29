@@ -4,7 +4,7 @@ import typing
 from aiogram import types, Bot
 from aiogram.exceptions import TelegramAPIError
 
-from project.db.models import User
+from backend.src.project.db.models import User
 
 TRASH_KEY = 'messages_to_delete'
 

@@ -2,7 +2,7 @@ from aiogram import Bot
 from aiogram.fsm.state import State
 from aiogram.fsm.storage.base import BaseStorage, StorageKey, StateType
 
-from project.db.models import FSMData
+from backend.src.project.db.models import FSMData
 
 
 class DBStorage(BaseStorage):
