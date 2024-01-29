@@ -10,7 +10,7 @@ from functools import partial
 from pydantic import BaseModel as PydanticBaseModel, ValidationError
 from tortoise import Model
 
-from project.enums.custom_encode_type import CustomEncodeType
+from backend.src.project.enums.custom_encode_type import CustomEncodeType
 
 
 class CustomJsonItemModel(PydanticBaseModel):

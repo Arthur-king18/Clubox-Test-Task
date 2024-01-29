@@ -1,8 +1,8 @@
 from aiogram import types
-from project.telegram.events.delete import DeleteEvent
+from backend.src.project.telegram.events.delete import DeleteEvent
 
-from project.telegram import dp
-from project.telegram.utils.handler import handler
+from backend.src.project.telegram import dp
+from backend.src.project.telegram.utils.handler import handler
 
 
 @dp.callback_query(DeleteEvent.filter())

@@ -1,6 +1,6 @@
 from aiogram import Bot, Dispatcher, enums
 
-from project.settings import settings
+from backend.src.project.settings import settings
 from .utils.storage import DBStorage
 
 bot = Bot(token=settings.BOT_TOKEN, parse_mode=enums.ParseMode.HTML)

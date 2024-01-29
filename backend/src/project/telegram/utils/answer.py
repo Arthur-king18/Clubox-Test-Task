@@ -7,8 +7,8 @@ from aiogram.types import InputMediaVideo, InputMediaPhoto, InputMediaDocument, 
     Message, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from loguru import logger
 
-from project.telegram.utils.text_limit import shrink_text
-from project.utils.kwargs import filter_kwargs
+from backend.src.project.telegram.utils.text_limit import shrink_text
+from backend.src.project.utils.kwargs import filter_kwargs
 
 
 async def answer(

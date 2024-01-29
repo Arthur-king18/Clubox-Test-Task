@@ -3,11 +3,11 @@ from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 from aiogram.utils.i18n import get_i18n
 
-from project.db.models import User
-from project.settings import settings
-from project.telegram import dp
-from project.telegram.handlers.messages.private.commands import start
-from project.telegram.utils.handler import handler
+from backend.src.project.db.models import User
+from backend.src.project.settings import settings
+from backend.src.project.telegram import dp
+from backend.src.project.telegram.handlers.messages.private.start_handler import start
+from backend.src.project.telegram.utils.handler import handler
 
 
 @dp.message(Command('restart'), lambda _: settings.DEBUG)

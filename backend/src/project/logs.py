@@ -5,8 +5,8 @@ import sys
 
 from loguru import logger
 
-from project.definitions import LOGS_DIR
-from project.settings import settings
+from backend.src.project.definitions import LOGS_DIR
+from backend.src.project.settings import settings
 
 log_file = (
     "{time:DD-MM-YYYY}/log.log"

@@ -1,5 +1,5 @@
 # noinspection PyCompatibility
 from . import (
-    commands,  # required: high priority
+    start_handler,  # required: high priority
     test,
 )
