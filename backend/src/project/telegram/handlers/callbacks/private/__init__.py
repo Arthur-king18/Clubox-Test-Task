@@ -1,3 +1,6 @@
 from . import (
-    name
+    name,
+    profile,
+    change_profile,
+    menu
 )
