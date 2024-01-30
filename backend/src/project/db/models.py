@@ -11,7 +11,7 @@ from aiogram.fsm.storage.base import StorageKey
 from aiogram.utils import markdown as md
 from aiogram.utils.web_app import WebAppUser
 
-from project.utils.custom_encoders import custom_json_loads, custom_json_dumps
+from backend.src.project.utils.custom_encoders import custom_json_loads, custom_json_dumps
 
 
 class BaseModel(Model):
@@ -84,7 +84,7 @@ class FSMData(BaseModel):
 
     @classmethod
     async def get_by_storage_key(cls, key: StorageKey) -> 'FSMData':
-        user = await User.get_current()  # TODO: optimize
+        user = await User.get_current()
         assert user.id == key.user_id
         model, created = await cls.get_or_create(
             bot_id=key.bot_id,
@@ -112,8 +112,10 @@ class UpdatedAtMixin:
 
 
 class User(BaseModel, CreatedAtMixin, UpdatedAtMixin):
+    call_name = fields.TextField(null=True)
     tg_first_name = fields.TextField()
     tg_last_name = fields.TextField(null=True)
+    age = fields.IntField(null=True)
     tg_username = fields.TextField(null=True)
     language = fields.CharField(default='ru', max_length=4)
     phone_number = fields.CharField(max_length=32, unique=True, null=True)
@@ -177,6 +179,31 @@ class User(BaseModel, CreatedAtMixin, UpdatedAtMixin):
         )
         return user
 
+    @classmethod
+    async def update_call_name(cls, call_name: str) -> None:
+        tg_user = types.User.get_current()
+        user = await User.get_or_none(id=tg_user.id)
+
+        update_fields = dict(
+            call_name=call_name,
+        )
+
+        await user.update_from_dict(update_fields)
+        await user.save(update_fields=update_fields)
+
+    @classmethod
+    async def update_age(cls, age: int) -> None:
+        tg_user = types.User.get_current()
+        user = await User.get_or_none(id=tg_user.id)
+
+        update_fields = dict(
+            age=age
+        )
+
+        await user.update_from_dict(update_fields)
+        await user.save(update_fields=update_fields)
+
+
     class PydanticMeta(BaseModel.PydanticMeta):
         exclude = (
             'context',
@@ -185,4 +212,4 @@ class User(BaseModel, CreatedAtMixin, UpdatedAtMixin):
         )
 
 
-Tortoise.init_models(['project.db.models'], 'models')
+Tortoise.init_models(['backend.src.project.db.models'], 'models')

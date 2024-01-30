@@ -1,8 +1,8 @@
 from aiogram import Bot
 from loguru import logger
 
-from project.settings import settings
-from project.utils.wait_for_it import wait_for_it
+from backend.src.project.settings import settings
+from backend.src.project.utils.wait_for_it import wait_for_it
 
 
 async def on_startup():

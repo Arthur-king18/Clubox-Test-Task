@@ -1,13 +1,13 @@
-from project.settings import settings
+from backend.src.project.settings import settings
 
 config = {
     'connections': {
         'default': f'postgres://{settings.POSTGRES_USER}:{settings.POSTGRES_PASSWORD}'
-                   f'@db:5432/{settings.POSTGRES_DB}'
+                   f'@localhost:1338/{settings.POSTGRES_DB}'
     },
     'apps': {
         'models': {
-            'models': ['project.db.models', 'aerich.models'],
+            'models': ['backend.src.project.db.models', 'aerich.models'],
             'default_connection': 'default'
         }
     }

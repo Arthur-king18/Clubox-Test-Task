@@ -3,7 +3,7 @@ import subprocess
 from aiogram.types import TelegramObject
 from aiogram.utils.i18n import I18nMiddleware, I18n
 
-from project.definitions import LOCALES_DIR
+from backend.src.project.definitions import LOCALES_DIR
 
 LOCALES_DOMAIN = 'texts'
 

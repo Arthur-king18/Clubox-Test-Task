@@ -3,7 +3,7 @@ from typing import Callable
 from aiogram import BaseMiddleware
 from aiogram import types
 
-from project.db.models import User
+from backend.src.project.db.models import User
 
 
 class UserMiddleware(BaseMiddleware):

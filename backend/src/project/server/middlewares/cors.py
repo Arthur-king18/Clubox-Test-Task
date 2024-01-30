@@ -1,7 +1,7 @@
 from starlette.requests import Request
 
-from project.server import app
-from project.settings import settings
+from backend.src.project.server import app
+from backend.src.project.settings import settings
 
 
 @app.middleware('http')

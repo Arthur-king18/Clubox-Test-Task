@@ -1,7 +1,7 @@
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 
-from project.server import app
+from backend.src.project.server import app
 
 
 def create_response(status_code: int = 400, detail: str = None) -> JSONResponse:

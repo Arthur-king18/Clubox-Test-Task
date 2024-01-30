@@ -4,8 +4,8 @@ from unittest.mock import patch
 from aerich import Command
 from loguru import logger
 
-from project.db.config import config
-from project.settings import settings
+from backend.src.project.db.config import config
+from backend.src.project.settings import settings
 
 MIGRATIONS_DIR = settings.PROJECT_DIR.joinpath('migrations')
 

@@ -2,9 +2,9 @@ from aiogram import types, Bot
 from fastapi import status
 from loguru import logger
 
-from project.server import app
-from project.settings import settings
-from project.telegram import dp
+from backend.src.project.server import app
+from backend.src.project.settings import settings
+from backend.src.project.telegram import dp
 
 
 async def handle_update(update: types.Update):
