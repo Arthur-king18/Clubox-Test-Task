@@ -2,7 +2,7 @@ version: "3"
 
 services:
   backend:
-    env_file: .env
+    env_file: .env.local
     image: ${REGISTRY}/backend:${TAG:-latest}
     build: backend
     tty: true
@@ -21,10 +21,10 @@ services:
       - db
 
   db:
-    env_file: .env
+    env_file: .env.local
     image: postgres:alpine
     ports:
-      - ${POSTGRES_PORT}:5432
+      - ${POSTGRES_PORT}:1338
     volumes:
       - db-data:/var/lib/postgresql/data
 

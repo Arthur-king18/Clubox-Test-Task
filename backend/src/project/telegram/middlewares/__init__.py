@@ -1,9 +1,9 @@
 from aiogram.client.session.middlewares.request_logging import RequestLogging
 
-from project.telegram import dp, bot
-from project.telegram.middlewares.i18n import DBI18nMiddleware
-from project.telegram.middlewares.logging import LoggingMiddleware
-from project.telegram.middlewares.users import UserMiddleware
+from backend.src.project.telegram import dp, bot
+from backend.src.project.telegram.middlewares.i18n import DBI18nMiddleware
+from backend.src.project.telegram.middlewares.logging import LoggingMiddleware
+from backend.src.project.telegram.middlewares.users import UserMiddleware
 
 # Hell yes, order is important. Be careful
 bot.session.middleware(RequestLogging())

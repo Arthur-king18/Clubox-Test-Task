@@ -3,8 +3,8 @@ from datetime import datetime
 
 from loguru import logger
 
-from project.definitions import DUMPS_DIR
-from project.settings import settings
+from backend.src.project.definitions import DUMPS_DIR
+from backend.src.project.settings import settings
 
 
 def create_pg_dump():

@@ -6,7 +6,7 @@ from aiogram.utils.i18n import get_i18n
 from backend.src.project.db.models import User
 from backend.src.project.settings import settings
 from backend.src.project.telegram import dp
-from backend.src.project.telegram.handlers.messages.private.start_handler import start
+from backend.src.project.telegram.handlers.messages.private.start_handler import command_start
 from backend.src.project.telegram.utils.handler import handler
 
 
@@ -14,7 +14,7 @@ from backend.src.project.telegram.utils.handler import handler
 @handler
 async def restart(message: types.Message, user: User, state: FSMContext):
     await user.delete()
-    await start(message, state=state)
+    await command_start(message, state=state)
 
 
 @dp.message(Command('locales'), lambda _: settings.DEBUG)

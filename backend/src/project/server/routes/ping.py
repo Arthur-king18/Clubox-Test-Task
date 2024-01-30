@@ -1,4 +1,4 @@
-from project.server import app
+from backend.src.project.server import app
 
 
 @app.get('/api/ping')

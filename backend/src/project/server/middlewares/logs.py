@@ -3,7 +3,7 @@ from fastapi.requests import Request
 from loguru import logger
 from starlette.responses import JSONResponse
 
-from project.server import app
+from backend.src.project.server import app
 
 
 def request_info(request: Request) -> str:

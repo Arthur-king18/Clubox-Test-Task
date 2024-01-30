@@ -1,6 +1,6 @@
 from enum import auto
 
-from project.enums import NameEnum
+from backend.src.project.enums import NameEnum
 
 
 class CustomEncodeType(NameEnum):
