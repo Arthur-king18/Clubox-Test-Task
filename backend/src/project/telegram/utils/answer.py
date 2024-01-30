@@ -1,5 +1,5 @@
 import contextlib
-from typing import assert_never
+from typing_extensions import assert_never
 
 from aiogram import types, Bot
 from aiogram.exceptions import TelegramAPIError
@@ -26,7 +26,7 @@ async def answer(
         force_delete: bool = False,
         **common_kwargs,
 ) -> Message | None:
-    assert bool(message) ^ bool(chat_id)
+    # assert bool(message) ^ bool(chat_id)
     chat_id = chat_id or message.chat.id
     message_id = message.message_id if message else None
 
