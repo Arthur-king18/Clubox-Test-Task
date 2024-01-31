@@ -27,5 +27,5 @@ async def command_menu(query: CallbackQuery) -> None:
             message=query.message,
             chat_id=query.message.chat.id,
             text="<b>I'm glad to see you</b> 🎈",
-            reply_markup=await get_profile()
+            reply_markup=await get_profile(user_id=query.message.chat.id)
         )
