@@ -24,7 +24,7 @@ async def command_get_age(message: Message, state: FSMContext) -> None:
                 message=message,
                 chat_id=message.chat.id,
                 text="<b>Congratulations!</b> 🥳",
-                reply_markup=await get_profile()
+                reply_markup=await get_profile(user_id=message.from_user.id)
             )
 
             await User.update_age(age=message.text)
@@ -36,7 +36,7 @@ async def command_get_age(message: Message, state: FSMContext) -> None:
                 message=message,
                 chat_id=message.chat.id,
                 text=f"Well! Your current age is <b>{message.text}</b>",
-                reply_markup=await get_profile()
+                reply_markup=await get_profile(user_id=message.chat.id)
             )
 
             await User.update_age(age=message.text)

@@ -29,5 +29,5 @@ async def command_start(message: Message) -> None:
             message=message,
             chat_id=message.chat.id,
             text="You are already registered!",
-            reply_markup=await get_profile()
+            reply_markup=await get_profile(user_id=message.chat.id)
         )

@@ -203,7 +203,6 @@ class User(BaseModel, CreatedAtMixin, UpdatedAtMixin):
         await user.update_from_dict(update_fields)
         await user.save(update_fields=update_fields)
 
-
     class PydanticMeta(BaseModel.PydanticMeta):
         exclude = (
             'context',
