@@ -12,10 +12,9 @@
 1. `uvicorn backend.src.project.server:app --host localhost --port 8000`
 ##### или
 2. Через Docker
+****
 
-
-
-## Наш стек и пояснение к тестовому
+## Наш стек и пояснение к тестовому (От работодателя)
 
 Мы используем
 1. Aiogram 3
